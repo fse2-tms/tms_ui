@@ -1,0 +1,70 @@
+<div class="container-fluid custom-top-margin">
+    <div class="row justify-content-center">
+        <div class="col-md-1"></div>
+        <div class="col-md">
+            <mat-card class="card-style">
+                <mat-card-header>
+                    <mat-card-title>Book a Ride</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="row">
+			        	<mat-form-field class="col-md-6">
+			        		<input matInput class="darkfont" placeholder="Pick up location" [(ngModel)]="fromLoc">
+			        	</mat-form-field>
+                        <mat-form-field class="col-md-6">
+			        		<input matInput class="darkfont" placeholder="Drop location" [(ngModel)]="toLoc">
+			        	</mat-form-field>
+			        </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div *ngIf="errorMsg.length >0" class="row errorMsg cardError">
+                                {{errorMsg}}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <button mat-raised-button class="btn" (click)="submit()">Submit</button>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">&nbsp;</div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-1"></div>
+        <div class="col-md">
+            <mat-card class="card-style">
+                <mat-card-header>
+                    <mat-card-title>Track Ride</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div *ngIf="allRides.length == 0">No Rides request yet</div>
+                    <mat-card class="light3-bg cardMargin" *ngFor="let ride of allRides">
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    Pickup : {{ride.pickup}}
+                                </div>
+                                <div class="col-md-4">
+                                    Drop : {{ride.drop}}
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-chip-list>
+                                        <mat-chip>{{ride.ridestatus}}</mat-chip>
+                                    </mat-chip-list>
+                                </div>
+			                </div>
+                        </mat-card-content>
+                        <mat-card-actions *ngIf="ride.ridestatus != 'Completed' && ride.ridestatus != 'Cancelled' && ride.ridestatus != 'Trip started'">
+                            <button mat-raised-button class="btn" (click)=cancelRide(ride)>Cancel</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

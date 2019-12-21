@@ -1,0 +1,12 @@
+.formbox {
+	margin-left: auto;
+    margin-right: auto;
+	vertical-align: middle;
+	margin-top: 1vh;
+    border-radius: 5px;
+}
+
+.form-padding {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

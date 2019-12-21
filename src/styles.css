@@ -1,0 +1,57 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body, html {
+	margin: 0px;
+	padding: 0px;
+	min-height: 100%;
+    background-color: #E9CFCF;
+    font-size: 1em;
+}
+
+@font-face {
+  font-family: lucida;
+  src: url(assets/font/lucidaSans/Lucida-Sans.ttf) format("truetype");
+}
+
+* {
+  font-family: 'lucida', Geneva, Verdana, sans-serif;
+}
+
+.light1-bg {
+    background-color: #E9CFCF;
+}
+
+.light2-bg {
+    background-color: #EEB9B9;
+}
+
+.light3-bg {
+    background-color: #F3E8E8;
+}
+
+.box-container {
+    border: 1px solid #FF8E8E;
+    padding: 3vw;
+    border-radius: 2vw;
+}
+
+.btn {
+    background-color: #FF8E8E;
+    border: 1px solid black;
+}
+
+.errorMsg {
+    color: red;
+}
+
+.cardError {
+    padding-top: 1vw;
+    padding-left: 1vw;
+}
+
+.label {
+    font-size: 0.5em;
+}
+
+.cardMargin {
+    margin-bottom: 2vw;
+}

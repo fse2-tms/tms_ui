@@ -1,0 +1,16 @@
+.banner {
+    margin-bottom: 5vh;
+}
+
+.no-margin {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.lefttoolbar {
+    padding-left: 2vw;
+}
+
+.righttoolbar {
+    padding-right: 2vw;
+}

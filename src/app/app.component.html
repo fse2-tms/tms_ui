@@ -1,0 +1,18 @@
+<mat-card class="container-fluid light2-bg banner">
+	<div class="row justify-content-center">
+        <h2>Travel Manager</h2>
+    </div>
+</mat-card>
+<!--<div class="row justify-content-end toolbar" routerLink="/login">Sign in</div>-->
+<div class="row no-margin">
+    <div class="col">
+        <div class="row justify-content-start lefttoolbar">{{username}}</div>
+    </div>
+    <div class="col-6">
+        <div class="row justify-content-center"><h4>{{header}}</h4></div>
+    </div>
+    <div class="col">
+        <div class="row justify-content-end righttoolbar" (click)="logout()" routerLink="/login">{{option}}</div>
+    </div>
+</div>
+<router-outlet></router-outlet>

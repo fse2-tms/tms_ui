@@ -1,0 +1,68 @@
+<div class="container-fluid custom-top-margin">
+    <div class="row justify-content-center">
+        <div class="col-md-1"></div>
+        <div class="col-md">
+            <mat-card class="card-style">
+                <mat-card-header>
+                    <mat-card-title>Open Ride Requests</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div *ngIf="openRides.length == 0">No Open Rides</div>
+                    <mat-card class="light3-bg cardMargin" *ngFor="let ride of openRides">
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Pickup : {{ride.pickup}}
+                                </div>
+                                <div class="col-md-6">
+                                    Drop : {{ride.drop}}
+                                </div>
+			                </div>
+                        </mat-card-content>
+                        <mat-card-actions *ngIf="!driverEngaged">
+                            <button mat-raised-button class="btn" (click)="updateRide(ride, 'accept')">Accept</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+    <div class="row">&nbsp;</div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-1"></div>
+        <div class="col-md">
+            <mat-card class="card-style">
+                <mat-card-header>
+                    <mat-card-title>Ride Summary</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div *ngIf="allRides.length == 0">No Rides yet</div>
+                    <mat-card class="light3-bg cardMargin" *ngFor="let ride of allRides; let i = index">
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    Pickup : {{ride.pickup}}
+                                </div>
+                                <div class="col-md-4">
+                                    Drop : {{ride.drop}}
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-chip-list>
+                                        <mat-chip>{{ride.ridestatus}}</mat-chip>
+                                    </mat-chip-list>
+                                </div>
+			                </div>
+                        </mat-card-content>
+                        <mat-card-actions *ngIf="ride.status != 'Completed' && ride.status != 'Cancelled'">
+                            <button mat-raised-button class="btn" (click)="updateRide(ride, i)">{{ride.action}}</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

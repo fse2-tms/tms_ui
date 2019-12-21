@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row justify-content-center formbox form-padding">
+        <form id="login-form" class="box-container">
+			<div class="form-group">
+				<mat-form-field>
+					<input matInput class="darkfont" placeholder="User Id" [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
+				</mat-form-field>
+			</div>
+			<div class="form-group">
+				<mat-form-field>
+					<input matInput type="password" id="password" placeholder="Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+				</mat-form-field>
+			</div>
+			<div class="form-group">
+				<div class="row custom-flex">
+					<div class="col"><button mat-raised-button class="btn" (click)="signin()">Submit</button></div>
+					<div class="col" routerLink="/signup">Sign Up</div>
+				</div>
+			</div>
+			<div *ngIf="errorMsg.length > 0" class="row form-padding">
+				<div class="col-lg-6"></div>
+				<div class="col-lg-6 errorMsg">
+					{{errorMsg}}
+				</div>
+			</div>
+		</form>
+    </div>
+	<div class="row justify-content-center">
+		<strong>Admin Credentials</strong>
+	</div>
+	<div class="row justify-content-center">
+		User id: <strong>admin</strong>
+	</div>
+	<div class="row justify-content-center">
+		Password: <strong>admin</strong>
+	</div>
+</div>

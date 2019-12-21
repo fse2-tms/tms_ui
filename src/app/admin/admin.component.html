@@ -1,0 +1,43 @@
+<div class="container-fluid custom-top-margin">
+    <div class="row justify-content-center">
+        <div class="col-md-1"></div>
+        <div class="col-md">
+            <mat-card class="card-style">
+                <mat-card-header>
+                    <mat-card-title>Track Ride</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div *ngIf="allRides.length == 0">No Rides request yet</div>
+                    <mat-card class="light3-bg cardMargin" *ngFor="let ride of allRides">
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    Customer : {{ride.riderid}}
+                                </div>
+                                <div class="col-md-4">
+                                    Driver : {{ride.driverid}}
+                                </div>
+                                <div class="col-md-4">
+                                </div>
+			                </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    Pickup : {{ride.pickup}}
+                                </div>
+                                <div class="col-md-4">
+                                    Drop : {{ride.drop}}
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-chip-list>
+                                        <mat-chip>{{ride.ridestatus}}</mat-chip>
+                                    </mat-chip-list>
+                                </div>
+			                </div>
+                        </mat-card-content>
+                    </mat-card>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

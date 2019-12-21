@@ -1,0 +1,46 @@
+<div class="container-fluid">
+	<!--<div class="row justify-content-center"><h5>Sign up</h5></div>-->
+    <div class="row justify-content-center formbox form-padding">
+        <form id="login-form" class="box-container">
+			<mat-radio-group aria-label="Select an option">
+				<div class="row">
+					<mat-radio-button class="col-6" value="driver" (change)="changed('driver')">Driver</mat-radio-button>
+					<mat-radio-button class="col-6" value="rider" (change)="changed('rider')">Rider</mat-radio-button>
+				</div>
+			</mat-radio-group>
+			<div class="row">
+				<mat-form-field class="col-12">
+					<input matInput class="darkfont" placeholder="Name" [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
+				</mat-form-field>
+			</div>
+			<div *ngIf="driverChecked" class="row">
+				<mat-form-field class="col-lg-6">
+					<input matInput id="carNumber" placeholder="Car Number" [(ngModel)]="carNumber" [ngModelOptions]="{standalone: true}">
+				</mat-form-field>
+				<mat-form-field class="col-lg-6">
+					<input matInput id="carModel" placeholder="Car Model" [(ngModel)]="carModel" [ngModelOptions]="{standalone: true}">
+				</mat-form-field>
+			</div>
+			<div class="row">
+				<mat-form-field class="col-lg-6">
+					<input matInput type="password" id="password" placeholder="Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+				</mat-form-field>
+				<mat-form-field class="col-lg-6">
+					<input matInput type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword" [ngModelOptions]="{standalone: true}">
+				</mat-form-field>
+			</div>
+			<div class="row">
+				<div class="col-lg-6"></div>
+				<div class="col-lg-6">
+					<button mat-raised-button class="btn" (click)="submit()">Submit</button>
+				</div>
+			</div>
+			<div *ngIf="errorMsg.length > 0" class="row form-padding">
+				<div class="col-lg-6"></div>
+				<div class="col-lg-6 errorMsg">
+					{{errorMsg}}
+				</div>
+			</div>
+		</form>
+    </div>
+</div>
